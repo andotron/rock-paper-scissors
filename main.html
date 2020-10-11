@@ -12,8 +12,33 @@
         //a function that plays a single round of rock paper scissors.
         //this function should take 2 arguments playerSelection and computer Selecton
         //this function should return a string that declares the winner of the round.
+        function play1round(playerSelection, computerSelection) {
+            computerSelection = computerPlay();
+            playerSelection = (prompt("ROCK, PAPER, SCISSORS... SHOOT")).toLowerCase(); // constraint
+            //figure out all cases where you tie
+            if ((computerSelection === 'rock' && playerSelection === 'rock') || 
+                (computerSelection === 'paper' && playerSelection === 'paper') || 
+                (computerSelection === 'scissors' && playerSelection === 'scissors')) {
+                return `This round is a tie, both players chose ${playerSelection}`;
+            } else if ( //figure out all cases in which the player wins
+                (computerSelection === 'rock' && playerSelection === 'paper') || 
+                (computerSelection === 'paper' && playerSelection === 'scissors') || 
+                (computerSelection === 'scissors' && playerSelection === 'rock')) {
+                return `You win, ${playerSelection} beats ${computerSelection}`
+            } else {
+                return `You lose, ${computerSelection} beats ${playerSelection}`;
+            }
+                
+
+        
+            
+
+            //all other cases = player loses
+
+        }
 
         //constraints: make function case insensitive
+        //take user input and make it all lowercase before comparing the cpu selection with player selection
 
         //compile a new function called 'game()' and use the previous function inside this one to play 5 rounds.
         //game function should keep score and will report a winner or loser at the end of a round
