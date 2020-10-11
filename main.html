@@ -9,13 +9,19 @@
             return options[getRandomInt(options.length)];
         }
 
+        function humanPlay() {
+            let userInput = (prompt("ROCK, PAPER, SCISSORS... SHOOT"));
+
+            return userInputCheck(userInput) ? userInput.toLowerCase() : humanPlay(); 
+        }
         //a function that plays a single round of rock paper scissors.
         //this function should take 2 arguments playerSelection and computer Selecton
         //this function should return a string that declares the winner of the round.
         function play1round(playerSelection, computerSelection) {
             computerSelection = computerPlay();
-            //might need to implement input validation
-            playerSelection = (prompt("ROCK, PAPER, SCISSORS... SHOOT")).toLowerCase(); // constraint*
+            playerSelection = humanPlay();
+
+
             console.log(`You chose : ${playerSelection}`);
             console.log(`Computer chose : ${computerSelection}`);
             //figure out all cases where you tie
@@ -67,6 +73,14 @@
         //helper functions
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
+        }
+        //user input validation
+        function userInputCheck (input) {
+            if (input === 'rock' || input === 'paper' || input === 'scissors') {
+                return true;
+            } else {
+                return false;
+            }
         }
     </script>
 </html>
