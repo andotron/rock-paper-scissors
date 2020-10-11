@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        //a function that will randomly return rock paper or scissors.
+        //start with an array of possible options(rock/paper/scissor)
+        //use math.random() to help choose a random index of array to return.
+        function computerPlay() {
+            let options = ['rock', 'paper', 'scissors'];
+            return options[getRandomInt(options.length)];
+        }
+
+        //a function that plays a single round of rock paper scissors.
+        //this function should take 2 arguments playerSelection and computer Selecton
+        //this function should return a string that declares the winner of the round.
+
+        //constraints: make function case insensitive
+
+        //compile a new function called 'game()' and use the previous function inside this one to play 5 rounds.
+        //game function should keep score and will report a winner or loser at the end of a round
+
+        //helper functions
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+    </script>
+</html>

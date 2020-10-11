@@ -1,0 +1,1 @@
+Basic R,P,S script written to operate inside a console </WIP>
