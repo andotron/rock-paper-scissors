@@ -1,0 +1,11 @@
+h1 {
+    display: block;
+    text-align: center;
+}
+
+.playzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
